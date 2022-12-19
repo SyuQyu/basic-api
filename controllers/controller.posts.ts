@@ -1,4 +1,5 @@
 import formidable from "formidable"
+import { createPost } from "../queries/posts"
 
 const form = formidable({})
 
@@ -14,7 +15,18 @@ const createPosts = async (req: any, res: any) => {
 
     const { fields, files } = response
     console.log(fields)
-    res.status(201).json({ fields })
+    const payload = {
+        author: 1,
+        message: fields.message
+    }
+    const resSend = await createPost(payload)
+    
+    if(resSend) {
+        res.status(201).json({ resSend })
+    } else {
+        res.status(404).json({ err : "Something went wrong!!" })
+    }
+    
 }
 
 module.exports = {

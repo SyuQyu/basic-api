@@ -1,6 +1,6 @@
 import {prisma} from "."
 
-export const createPosts = (data:any) => {
+export const createPost = (data:any) => {
     return prisma.post.create({
         data: data
     })
