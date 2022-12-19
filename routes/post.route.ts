@@ -1,10 +1,8 @@
-const exp = require('express');
+import { route } from './identifier';
 const {
     createPosts
 } = require('../controllers');
 
-
-const route = exp.Router();
 
 route.post('/create', createPosts);;
 
