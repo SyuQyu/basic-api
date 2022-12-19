@@ -1,7 +1,7 @@
 ## Basic API
 Simple API using Expressjs, Prisma, And Mysql Database
 
-## Setup
+## Setup Dependencies
 
 Make sure to install the dependencies:
 
@@ -13,5 +13,14 @@ yarn install
 
 Start the development server on http://localhost:3000
 
-```bash
 yarn run dev
+```
+
+## Setup Prisma
+
+```bash
+# prisma
+npx prisma migrate dev --name init
+
+#push update on schema.primsa
+npx prisma db push
