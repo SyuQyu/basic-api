@@ -14,3 +14,6 @@ yarn install
 Start the development server on http://localhost:3000
 
 yarn run dev
+```
+```bash
+# prisma
